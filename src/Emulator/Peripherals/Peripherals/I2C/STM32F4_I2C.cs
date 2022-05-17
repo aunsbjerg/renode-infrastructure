@@ -158,14 +158,16 @@ namespace Antmicro.Renode.Peripherals.I2C
             var result = 0u;
             if(dataToReceive != null && dataToReceive.Any())
             {
+                // TODO this seems to set to false for the last byte, meaning the last byte is not transmitted
+                byteTransferFinished.Value = (dataToReceive != null && dataToReceive.Count > 0);
                 result = dataToReceive.Dequeue();
             }
             else
             {
                 this.Log(LogLevel.Warning, "Tried to read from an empty fifo");
+                byteTransferFinished.Value = false;
             }
 
-            byteTransferFinished.Value = (dataToReceive != null && dataToReceive.Count > 0);
 
             Update();
             return result;

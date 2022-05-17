@@ -419,6 +419,11 @@
     <Compile Include="Peripherals\UART\PL011.cs" />
     <Compile Include="Peripherals\Miscellaneous\ExternalWindowMMU.cs" />
     <Compile Include="Peripherals\Video\MusteinGenericGPU.cs" />
+    <Compile Include="Peripherals\Video\ST7789V.cs" />
+    <Compile Include="Peripherals\Sensors\ICM42670.cs" />
+    <Compile Include="Peripherals\Sensors\ST_STC3115.cs" />
+    <Compile Include="Peripherals\Sensors\TI_BQ2477X.cs" />
+    <Compile Include="Peripherals\Sensors\TI_TMP116.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>
